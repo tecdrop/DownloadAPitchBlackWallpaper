@@ -1,0 +1,28 @@
+{
+    "name": "pitchblackwallpaper-download",
+    "version": "1.0.0",
+    "description": "",
+    "scripts": {
+        "workbox": "workbox generateSW"
+    },
+    "keywords": [],
+    "author": "Tecdrop",
+    "license": "MIT",
+    "eslintConfig": {
+        "env": {
+            "browser": true,
+            "es6": true
+        },
+        "extends": "eslint:all",
+        "parserOptions": {
+            "sourceType": "module"
+        },
+        "rules": {
+            "func-style": "off",
+            "linebreak-style": ["error", "windows"],
+            "max-len": ["error", 120],
+            "one-var": "off",
+            "padded-blocks": "off"
+        }
+    }
+}
