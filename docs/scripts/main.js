@@ -5,20 +5,22 @@ const widthInput = document.getElementById("widthInput");
 const heightInput = document.getElementById("heightInput");
 const downloadLinkEl = document.getElementById("downloadLink");
 
-const resolutionsList = document.getElementById("resolutionsList");
-resolutionsList.addEventListener("click", (event) => {
-    event.preventDefault();
-    if (event.target.nodeName === "A") {
-        // const row = event.target.parentNode;
-        widthInput.value = event.target.dataset.width;
-        heightInput.value = event.target.dataset.height;
-        window.scrollTo({
-            top: 0,
-            behavior: "smooth"
-        });
-        // console.log(row);
-    }
-}, false);
+// const resolutionsList = document.getElementById("resolutionsList");
+// resolutionsList.addEventListener("click", (event) => {
+//     event.preventDefault();
+//     if (event.target.nodeName === "A") {
+//         // const row = event.target.parentNode;
+//         widthInput.value = event.target.dataset.width;
+//         heightInput.value = event.target.dataset.height;
+//         // writeAndDownloadWallpaper(event);
+//         window.scrollTo({
+//             top: 0,
+//             behavior: "smooth"
+//         });
+//         // event.target.hidden = true;
+//         // console.log(row);
+//     }
+// }, false);
 
 
 function writeAndDownloadWallpaper(event) {
@@ -33,7 +35,7 @@ function writeAndDownloadWallpaper(event) {
     downloadLinkEl.href = pngWriter.getObjectURL();
     downloadLinkEl.click();
 
-    event.target.blur();
+    // event.target.blur();
 }
 
 const downloadButtonEl = document.getElementById("downloadButton");
