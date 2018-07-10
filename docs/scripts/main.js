@@ -5,22 +5,24 @@ const widthInput = document.getElementById("widthInput");
 const heightInput = document.getElementById("heightInput");
 const downloadLinkEl = document.getElementById("downloadLink");
 
-const resolutionsTable = document.getElementById("resolutionsTable");
-resolutionsTable.addEventListener("click", (event) => {
-    if (event.target.nodeName === "TD") {
-        const row = event.target.parentNode;
-        widthInput.value = row.dataset.width;
-        heightInput.value = row.dataset.height;
+const resolutionsList = document.getElementById("resolutionsList");
+resolutionsList.addEventListener("click", (event) => {
+    event.preventDefault();
+    if (event.target.nodeName === "A") {
+        // const row = event.target.parentNode;
+        widthInput.value = event.target.dataset.width;
+        heightInput.value = event.target.dataset.height;
         window.scrollTo({
             top: 0,
             behavior: "smooth"
         });
         // console.log(row);
     }
-}, true);
+}, false);
 
 
-function writeAndDownloadWallpaper() {
+function writeAndDownloadWallpaper(event) {
+    event.preventDefault();
 
     const width = widthInput.value;
     const height = heightInput.value;
@@ -34,3 +36,5 @@ function writeAndDownloadWallpaper() {
 
 const downloadButtonEl = document.getElementById("downloadButton");
 downloadButtonEl.addEventListener("click", writeAndDownloadWallpaper);
+
+
