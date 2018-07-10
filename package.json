@@ -18,11 +18,14 @@
             "sourceType": "module"
         },
         "rules": {
+            "array-element-newline": "off",
             "func-style": "off",
             "linebreak-style": ["error", "windows"],
             "max-len": ["error", 120],
+            "no-console": "off",
             "one-var": "off",
-            "padded-blocks": "off"
+            "padded-blocks": "off",
+            "space-before-function-paren": "off"
         }
     }
 }
