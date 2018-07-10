@@ -32,6 +32,8 @@ function writeAndDownloadWallpaper(event) {
     downloadLinkEl.download = `pitchblackwallpaper-${width}x${height}.png`;
     downloadLinkEl.href = pngWriter.getObjectURL();
     downloadLinkEl.click();
+
+    event.target.blur();
 }
 
 const downloadButtonEl = document.getElementById("downloadButton");

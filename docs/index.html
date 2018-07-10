@@ -8,6 +8,8 @@
 
     <link rel="stylesheet" href="/styles/normalize.css">
     <link rel="stylesheet" href="/styles/main.css">
+
+    <meta name="theme-color" content="#000000">
 </head>
 <body>
 
@@ -16,7 +18,7 @@
         </header>
 
                 <main>
-            <p>
+            <p class="mb--1-5">
                 <label>
                     Width:
                     <input type="number" id="widthInput" value="1920" min="1" max="100000">
@@ -26,8 +28,8 @@
                     <input type="number" id="heightInput" value="1080" min="1" max="100000">
                 </label>
             </p>
-            <p>
-                <a href="#" class="button" id="downloadButton" role="button">Download Wallpaper</a>
+            <p class="mb--0">
+                <button id="downloadButton" class="button--download">Download Wallpaper</button>
                 <a id="downloadLink" hidden href="#">Download Wallpaper</a>
             </p>
         </main>
