@@ -350,3 +350,10 @@ button:active {
 .container--center {
     text-align: center;
 }
+
+
+.filter__container {
+    align-items: center;
+    display: flex;
+    justify-content: space-between;
+}
