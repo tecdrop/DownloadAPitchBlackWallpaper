@@ -1,4 +1,28 @@
 {
+    "272x340": [
+        { "type": "watch", "name": "Apple Watch 38mm" }
+    ],
+    "280x280": [
+        { "type": "watch", "name": "LG G Watch" }
+    ],
+    "312x390": [
+        { "type": "watch", "name": "Apple Watch 42mm" }
+    ],
+    "320x290": [
+        { "type": "watch", "name": "Moto 360" }
+    ],
+    "320x320": [
+        { "type": "watch", "name": "Asus Zen Watch" },
+        { "type": "watch", "name": "LG G Watch R" },
+        { "type": "watch", "name": "Samsung Gear Live" },
+        { "type": "watch", "name": "Sony Smartwatch 3" }
+    ],
+    "320x325": [
+        { "type": "watch", "name": "Moto 360 v2 42mm" }
+    ],
+    "320x330": [
+        { "type": "watch", "name": "Moto 360 v2 46mm" }
+    ],
     "320x480": [
         { "type": "phone", "name": "Apple iPhone 3GS" }
     ],
@@ -20,6 +44,7 @@
         { "type": "phone", "name": "Nokia Lumia 720" },
         { "type": "phone", "name": "Nokia Lumia 900" }],
     "480x854": [
+        { "type": "phone", "name": "Android One" },
         { "type": "phone", "name": "Motorola Droid" }
     ],
     "540x960": [
@@ -208,14 +233,23 @@
         { "type": "phone", "name": "Microsoft Lumia 950" },
         { "type": "phone", "name": "Huawei Nexus 6p" }
     ],
+    "1440x2960": [
+        { "type": "handset", "name": "Samsung Galaxy S8" },
+        { "type": "handset", "name": "Samsung Galaxy S8+" }
+    ],
     "1536x2048": [
-        { "type": "tablet", "name": "Apple iPad 3 & 4" }
+        { "type": "tablet", "name": "Apple iPad 3 & 4" },
+        { "type": "tablet", "name": "iPad Mini Retina" },
+        { "type": "tablet", "name": "iPad Retina" }
     ],
     "1600x900": [
         { "type": "monitor", "name": "Dell Inspiron 14 series 36\"" }
     ],
     "1600x1200": [
         { "type": "tablet", "name": "Google Pixel C" }
+    ],
+    "1600x2560": [
+        { "type": "tablet", "name": "Dell Venue 8" }
     ],
     "1680x1050": [
         { "type": "monitor", "name": "Apple MacBook Pro 15-inch (Hi-Res screen)" }
@@ -242,12 +276,16 @@
         { "type": "phone", "name": "Motorola Moto G4 Plus" },
         { "type": "phone", "name": "Sony Xperia Z3 Plus" },
         { "type": "tablet", "name": "Huawei Mat" },
-        { "type": "tablet", "name": "Micromax Canvas 6" }
+        { "type": "tablet", "name": "Micromax Canvas 6" },
+        { "type": "laptop", "name": "Microsoft Surface 2" },
+        { "type": "laptop", "name": "Microsoft Surface 3" },
+        { "type": "laptop", "name": "Microsoft Surface Pro" }
     ],
     "1920x1200": [
         { "type": "monitor", "name": "Apple MacBook Pro 17-inch (Mid/Late 2007 - Late 2011)" },
         { "type": "monitor", "name": "Dell UltraSharp U2412M 24\"" },
-        { "type": "tablet", "name": "Lenovo Yoga 10 HD+" }
+        { "type": "tablet", "name": "Lenovo Yoga 10 HD+" },
+        { "type": "tablet", "name": "Sony Xperia Z3 Tablet" }
     ],
     "1921x1080": [
         { "type": "monitor", "name": "Apple iMac 21.5-inch (Late 2009 - Late 2012)" }
@@ -263,7 +301,7 @@
         { "type": "tablet", "name": "HTC Nexus 9" }
     ],
     "2160x1440": [
-        { "type": "tablet", "name": "Microsoft Surface Pro 3" }
+        { "type": "laptop", "name": "Microsoft Surface Pro 3" }
     ],
     "2160x3840": [
         { "type": "monitor", "name": "Panasonic BT-4LH310\n 4K LCD Monitor" }
@@ -272,11 +310,11 @@
         { "type": "monitor", "name": "Panasonic BT-4LH310P" }
     ],
     "2304x1440": [
-        { "type": "monitor", "name": "Apple MacBook 12-inch" }
+        { "type": "laptop", "name": "Apple MacBook 12" }
     ],
     "2560x1440": [
         { "type": "monitor", "name": "Apple Thunderbolt Display 27\"" },
-        { "type": "monitor", "name": "Apple iMac 27-inch (Late 2009 - Late 2012)" },
+        { "type": "desktop", "name": "Apple iMac 27" },
         { "type": "monitor", "name": "Dell U2713HM 27\"" },
         { "type": "monitor", "name": "Dell UltraSharp U2711 27\"" },
         { "type": "monitor", "name": "HP Dreamcolor Z27x" },
@@ -284,33 +322,29 @@
         { "type": "phone", "name": "Motorola Moto Z" }
     ],
     "2560x1600": [
-        { "type": "monitor", "name": "Apple MacBook Pro 13-inch (Retina display)" },
         { "type": "monitor", "name": "Apple Cinema Display 30\"" },
+        { "type": "laptop", "name": "Apple MacBook Pro 13-inch" },
+        { "type": "desktop", "name": "Chromebox 30" },
         { "type": "monitor", "name": "Dell UltraSharp U3011 30\"" },
-        { "type": "monitor", "name": "Apple MacBook Pro 13-inch" },
+        { "type": "tablet", "name": "Nexus 10" },
         { "type": "tablet", "name": "Samsung Galaxy Note Pro 12.2" },
-        { "type": "tablet", "name": "Sony Xperia Z4" }
+        { "type": "tablet", "name": "Sony Xperia Z4 Tablet" }
     ],
     "2560x1700": [
-        { "type": "monitor", "name": "Google Chromebook Pixel" }
+        { "type": "laptop", "name": "Google Chromebook Pixel" }
     ],
     "2732x2048": [
         { "type": "tablet", "name": "Apple iPad Pro" }
     ],
     "2736x1824": [
-        { "type": "tablet", "name": "Microsoft Surface Pro 4" },
-        { "type": "tablet", "name": "Microsoft Surface Pro (2017)" }
+        { "type": "laptop", "name": "Microsoft Surface Pro 4" },
+        { "type": "laptop", "name": "Microsoft Surface Pro (2017)" }
     ],
     "2880x1800": [
-        { "type": "monitor", "name": "Apple MacBook Pro 15-inch (Retina display)" },
-        { "type": "monitor", "name": "Apple MacBook Pro 15-inch" }
-    ],
-    "2960x1440": [
-        { "type": "phone", "name": "Samsung Galaxy S8+" },
-        { "type": "phone", "name": "Samsung Galaxy S8" }
+        { "type": "laptop", "name": "Apple MacBook Pro 15-inch" }
     ],
     "3000x2000": [
-        { "type": "monitor", "name": "Microsoft Surface Book" }
+        { "type": "laptop", "name": "Microsoft Surface Book" }
     ],
     "3840x2160": [
         { "type": "monitor", "name": "Asus PB287Q" },
@@ -320,6 +354,6 @@
         { "type": "monitor", "name": "Apple iMac 21.5-inch (Retina 4K Display)" }
     ],
     "5120x2880": [
-        { "type": "monitor", "name": "Apple iMac 27-inch (Retina 5K Display)" }
+        { "type": "desktop", "name": "Apple iMac 5K" }
     ]
 }

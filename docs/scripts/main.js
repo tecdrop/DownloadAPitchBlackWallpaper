@@ -1,10 +1,14 @@
 /* eslint-disable require-jsdoc */
-import { OneColorPngWriter } from "/scripts/OneColorPngWriter.js";
+
+let screenResolutions;
 
 const widthInput = document.getElementById("widthInput");
 const heightInput = document.getElementById("heightInput");
 const downloadLinkEl = document.getElementById("downloadLink");
-const commonSizesElems = document.querySelectorAll(".download-list li");
+
+const downloadList = document.getElementById("downloadList");
+
+let commonSizesElems;
 
 const filterCountElem = document.getElementById("filterCount");
 
@@ -80,3 +84,34 @@ filterInputEl.addEventListener("input", () => {
     });
     filterCountElem.textContent = counter;
 });
+
+
+function insertScreenResolutions(parentElement, screenResolutions) {
+    Object.keys(screenResolutions).forEach((resolution) => {
+        // console.log(screenResolutions[resolution]);
+
+        const itemListHtml = screenResolutions[resolution].reduce((html, item) => `${html}<li data-type="${item.type}">${item.name}</li>`, "");
+        
+        parentElement.insertAdjacentHTML("beforeend", `
+            <li>
+                <ul class="device-list">
+                    ${itemListHtml}
+                </ul>
+                <a class="button button--download" href="/images/wallpapers/pitchblackwallpaper-${resolution}.png" download>${resolution.replace("x", " x ")}</a>
+            </li>`
+        );
+
+    });
+    commonSizesElems = document.querySelectorAll(".download-list li");
+
+
+}
+
+
+fetch("/scripts/screen-resolutions.json")
+    .then((response) => response.json())
+    .then((data) => {
+        screenResolutions = data;
+        // console.log(screenResolutions);
+        insertScreenResolutions(downloadList, screenResolutions);
+    });

@@ -357,3 +357,45 @@ button:active {
     display: flex;
     justify-content: space-between;
 }
+
+
+
+.device-list {
+    list-style: none;
+    padding: 0;
+}
+
+.device-list > li {
+    display: inline-flex;
+    margin-right: 1rem;
+}
+
+.device-list > li::before {
+    height: 24px;
+    margin-right: 0.5rem;
+    opacity: 0.5;
+}
+
+.device-list > li[data-type="standard"]::before {
+    content: url("/images/icons/baseline-aspect_ratio-24px.svg");
+}
+
+.device-list > li[data-type="watch"]::before {
+    content: url("/images/icons/baseline-watch-24px.svg");
+}
+
+.device-list > li[data-type="handset"]::before {
+    content: url("/images/icons/baseline-smartphone-24px.svg");
+}
+
+.device-list > li[data-type="tablet"]::before {
+    content: url("/images/icons/baseline-tablet-24px.svg");
+}
+
+.device-list > li[data-type="laptop"]::before {
+    content: url("/images/icons/baseline-laptop-24px.svg");
+}
+
+.device-list > li[data-type="desktop"]::before {
+    content: url("/images/icons/baseline-desktop_mac-24px.svg");
+}
