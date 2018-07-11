@@ -4,6 +4,7 @@ import { OneColorPngWriter } from "/scripts/OneColorPngWriter.js";
 const widthInput = document.getElementById("widthInput");
 const heightInput = document.getElementById("heightInput");
 const downloadLinkEl = document.getElementById("downloadLink");
+const commonSizesElems = document.querySelectorAll(".download-list li");
 
 const builtinWallpapers = [
     "1080x1920", "1200x1920", "1366x768", "1440x2560", "1440x2960", "1440x900", "1536x2048", "1600x2560",
@@ -60,4 +61,16 @@ function writeAndDownloadWallpaper(event) {
 const downloadButtonEl = document.getElementById("downloadButton");
 downloadButtonEl.addEventListener("click", writeAndDownloadWallpaper);
 
+// console.log(commonSizesElems);
+// commonSizesElems.forEach(sizeElem => {
+//     sizeElem.hidden = !sizeElem.textContent.includes("Apple");
+// });
 
+const filterInputEl = document.getElementById("filterInput");
+
+filterInputEl.addEventListener("input", () => {
+    const filter = RegExp(filterInputEl.value, "i");
+    commonSizesElems.forEach((sizeElem) => {
+        sizeElem.hidden = !filter.test(sizeElem.textContent);
+    });
+});

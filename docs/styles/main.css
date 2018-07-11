@@ -11,6 +11,14 @@ body {
     color: #aaa;
     font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
     font-size: 1rem;
+    line-height: 1.5;
+}
+
+input, button {
+    margin: 0;
+    font-family: inherit;
+    font-size: inherit;
+    line-height: inherit;
 }
 
 /* ::selection {
@@ -47,6 +55,15 @@ label {
 
 label:focus-within {
     border-bottom: 1px solid #fff;
+}
+
+input[type="text"] {
+    background: inherit;
+    border: 1px solid #222;
+    border-radius: 4px;
+    padding: 0.5rem 1rem;
+    color: #fff;
+
 }
 
 input[type="number"] {
@@ -163,18 +180,19 @@ button:active {
     background-color: #666;
 }
 
-.button--download::before {
+/* .button--download::before {
     content: url("/images/icons/baseline-get_app-24px.svg");
     height: 24px;
     margin-right: 0.5rem;
-}
+} */
 
 .list {
-    /* display: flex;
-    flex-wrap: wrap; */
+    /* align-content: stretch; */
+    display: flex;
+    flex-wrap: wrap;
 }
 
-@media (min-width: 768px) {
+/* @media (min-width: 768px) {
     .list {
         column-count: 2;
         column-gap: 1rem;
@@ -193,7 +211,7 @@ button:active {
     .list {
         column-count: 3;
     }    
-}
+} */
 
 
 .list a {
@@ -202,20 +220,20 @@ button:active {
     align-items: center;
     /* background-color: rgba(255, 255, 255, 0.1); */
     background-color: #111;
-    border-radius: 2px;
+    border-radius: 4px;
     /* border-bottom: 1px solid #333; */
     /* border: 1px solid #333; */
     /* border-top: none; */
     cursor: pointer;
-    height: 56px;
-    padding: 0 1rem;
+    /* height: 56px; */
+    padding-left: 1rem;
     text-decoration: none;
     justify-content: space-between;
-    margin-bottom: 0.5rem;
+    /* margin-bottom: 0.5rem; */
 
-    /* flex-grow: 1;
-    width: 33%;
-    margin: 0.5rem;     */
+    flex-grow: 1;
+    /* width: 33%; */
+    margin: 0.5rem;    
 }
 
 /* .list a:last-child {
@@ -238,6 +256,10 @@ button:active {
 }
 
 .list > a > samp {
+    background-color: #222;
+    border-radius: 0 4px 4px 0;
+    margin-left: 1rem;
+    padding: 1rem;
     pointer-events: none;
 }
 
@@ -261,4 +283,70 @@ button:active {
 
 .mb--2 {
     margin-bottom: 2rem;
+}
+
+
+
+
+.download-list {
+    list-style-type: none;
+    padding: 0;
+}
+
+.download-list > li {
+    align-items: center;
+    border-bottom: 1px solid #222;
+    display: flex;
+    justify-content: space-between;
+    padding: 1rem;
+}
+
+.download-list > li > b {
+    align-items: center;
+    display: inline-flex;
+    font-weight: normal;
+}
+
+.download-list > li > b::before {
+    height: 24px;
+    margin-right: 0.5rem;
+}
+
+.download-list > li > b[data-type="monitor"]::before {
+    content: url("/images/icons/baseline-desktop_windows-24px.svg");
+}
+
+.download-list > li > b[data-type="phone"]::before {
+    content: url("/images/icons/baseline-smartphone-24px.svg");
+}
+
+.download-list > li > b[data-type="tablet"]::before {
+    content: url("/images/icons/baseline-tablet-24px.svg");
+}
+
+.download-list .button--download {
+    min-width: 10rem;
+}
+
+.button {
+    align-items: center;
+    background-color: #444;
+    border-radius: 4px;
+    cursor: pointer;
+    display: inline-flex;
+    padding: 0.5rem 1rem;
+    text-decoration: none;
+}
+
+.button--download::before {
+    content: url("/images/icons/baseline-get_app-24px.svg");
+    height: 24px;
+    margin-right: 0.5rem;
+}
+
+
+
+
+.container--center {
+    text-align: center;
 }
