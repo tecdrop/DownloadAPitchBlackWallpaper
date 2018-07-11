@@ -1,33 +1,6 @@
 {
-    "272x340": [
-        { "type": "watch", "name": "Apple Watch 38mm" }
-    ],
-    "280x280": [
-        { "type": "watch", "name": "LG G Watch" }
-    ],
-    "312x390": [
-        { "type": "watch", "name": "Apple Watch 42mm" }
-    ],
-    "320x290": [
-        { "type": "watch", "name": "Moto 360" }
-    ],
-    "320x320": [
-        { "type": "watch", "name": "Asus Zen Watch" },
-        { "type": "watch", "name": "LG G Watch R" },
-        { "type": "watch", "name": "Samsung Gear Live" },
-        { "type": "watch", "name": "Sony Smartwatch 3" }
-    ],
-    "320x325": [
-        { "type": "watch", "name": "Moto 360 v2 42mm" }
-    ],
-    "320x330": [
-        { "type": "watch", "name": "Moto 360 v2 46mm" }
-    ],
     "320x480": [
         { "type": "handset", "name": "iPhone" }
-    ],
-    "480x854": [
-        { "type": "handset", "name": "Android One" }
     ],
     "640x960": [
         { "type": "handset", "name": "iPhone 4" }
@@ -89,60 +62,5 @@
         { "type": "handset", "name": "Nexus 6P" },
         { "type": "handset", "name": "LG G3" },
         { "type": "handset", "name": "Samsung Galaxy Note 4" }
-    ],
-    "1440x2960": [
-        { "type": "handset", "name": "Samsung Galaxy S8" },
-        { "type": "handset", "name": "Samsung Galaxy S8+" }
-    ],
-    "1536x2048": [
-        { "type": "tablet", "name": "iPad Mini Retina" },
-        { "type": "tablet", "name": "iPad Retina" }
-    ],
-    "1600x2560": [
-        { "type": "tablet", "name": "Dell Venue 8" }
-    ],
-    "1920x1080": [
-        { "type": "laptop", "name": "Surface 2" },
-        { "type": "laptop", "name": "Surface 3" },
-        { "type": "laptop", "name": "Surface Pro" }
-    ],
-    "1920x1200": [
-        { "type": "tablet", "name": "Sony Xperia Z3 Tablet" }
-    ],
-    "2048x1536": [
-        { "type": "tablet", "name": "Nexus 9" }
-    ],
-    "2160x1440": [
-        { "type": "laptop", "name": "Surface Pro 3" }
-    ],
-    "2304x1440": [
-        { "type": "laptop", "name": "MacBook 12" }
-    ],
-    "2560x1440": [
-        { "type": "desktop", "name": "iMac 27" }
-    ],
-    "2560x1600": [
-        { "type": "laptop", "name": "MacBook Pro 13" },
-        { "type": "tablet", "name": "Nexus 10" },
-        { "type": "tablet", "name": "Sony Xperia Z4 Tablet" },
-        { "type": "desktop", "name": "Chromebox 30" }
-    ],
-    "2560x1700": [
-        { "type": "laptop", "name": "Chromebook Pixel" }
-    ],
-    "2732x2048": [
-        { "type": "tablet", "name": "iPad Pro" }
-    ],
-    "2736x1824": [
-        { "type": "laptop", "name": "Surface Pro 4" }
-    ],
-    "2880x1800": [
-        { "type": "laptop", "name": "MacBook Pro 15" }
-    ],
-    "3000x2000": [
-        { "type": "laptop", "name": "Surface Book" }
-    ],
-    "5120x2880": [
-        { "type": "desktop", "name": "iMac 5K" }
     ]
 }
