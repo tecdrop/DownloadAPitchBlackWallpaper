@@ -221,7 +221,7 @@ input, button {
     align-items: center;
     border-bottom: 1px solid #222;
     display: flex;
-    justify-content: space-between;
+    /* justify-content: space-between; */
     padding-bottom: 1rem;
     padding-top: 1rem;
 }
@@ -242,6 +242,7 @@ input, button {
 
  .device-list {
     display: flex;
+    flex-grow: 1;
     flex-wrap: wrap;
     list-style: none;
     margin-bottom: 0;
@@ -279,9 +280,9 @@ input, button {
     content: url("/images/icons/baseline-desktop_mac-24px.svg");
 }
 
-.device-list > li[data-type="standard"]::before {
-    content: url("/images/icons/baseline-aspect_ratio-24px.svg");
-}
+/* .device-list > li[data-type="standard"]::before {
+    content: url("/images/icons/baseline-aspect_ratio-24px.svg"); 
+}*/
 
 /* ==========================================================================
    Utilities
@@ -289,4 +290,17 @@ input, button {
 
 .mb--1 {
     margin-bottom: 1rem !important;
+}
+
+
+
+.button--swap {
+    background-color: inherit;
+    background-image: url("/images/icons/baseline-swap_horizontal_circle-24px.svg");
+    background-repeat: no-repeat;
+    background-position: center;
+    padding: 0;
+    height: 2rem;
+    width: 2rem;
+    margin-right: 1rem;
 }

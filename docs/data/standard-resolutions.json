@@ -2,6 +2,9 @@
     "320x240": [
         { "type": "standard", "name": "QVGA" }
     ],
+    "800x600": [
+        { "type": "standard", "name": "SVGA" }
+    ],
     "1024x600": [
         { "type": "standard", "name": "WSVGA" }
     ],
