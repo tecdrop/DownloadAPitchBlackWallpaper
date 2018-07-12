@@ -6,7 +6,8 @@ const widthInput = document.getElementById("widthInput");
 const heightInput = document.getElementById("heightInput");
 const downloadLinkEl = document.getElementById("downloadLink");
 
-const downloadList = document.getElementById("downloadList");
+const deviceList = document.getElementById("deviceList");
+const standardList = document.getElementById("standardList");
 
 let commonSizesElems;
 
@@ -102,16 +103,16 @@ function insertScreenResolutions(parentElement, screenResolutions) {
         );
 
     });
-    commonSizesElems = document.querySelectorAll(".download-list li");
+    commonSizesElems = document.querySelectorAll(".download-list > li");
 
 
 }
 
 
-fetch("/scripts/screen-resolutions.json")
+fetch("/data/device-resolutions.json")
     .then((response) => response.json())
-    .then((data) => {
-        screenResolutions = data;
-        // console.log(screenResolutions);
-        insertScreenResolutions(downloadList, screenResolutions);
-    });
+    .then((data) => insertScreenResolutions(deviceList, data));
+
+fetch("/data/standard-resolutions.json")
+    .then((response) => response.json())
+    .then((data) => insertScreenResolutions(standardList, data));

@@ -55,9 +55,6 @@
         { "type": "tablet", "name": "Nexus 7 ('12)" },
         { "type": "tablet", "name": "Samsung Galaxy Tab 10" }
     ],
-    "1024x600": [
-        { "type": "standard", "name": "WSVGA" }
-    ],
     "1080x1920": [ 
         { "type": "handset", "name": "HTC One M8" },
         { "type": "handset", "name": "HTC One M9" },
@@ -76,14 +73,11 @@
         { "type": "tablet", "name": "Nexus 7 ('13)" }
     ],
     "1366x768": [ 
-        { "type": "standard", "name": "FWXGA" },
         { "type": "laptop", "name": "Chromebook 11" },
         { "type": "laptop", "name": "MacBook Air 11" },
         { "type": "laptop", "name": "Surface" }
     ],
     "1440x900": [ 
-        { "type": "standard", "name": "WXGA+" },
-        { "type": "standard", "name": "WSXGA" },
         { "type": "laptop", "name": "MacBook Air 13" }
     ],
     "1440x2560": [ 
@@ -108,17 +102,14 @@
         { "type": "tablet", "name": "Dell Venue 8" }
     ],
     "1920x1080": [ 
-        { "type": "standard", "name": "FHD" },
         { "type": "laptop", "name": "Surface 2" },
         { "type": "laptop", "name": "Surface 3" },
         { "type": "laptop", "name": "Surface Pro" }
     ],
     "1920x1200": [ 
-        { "type": "standard", "name": "WUXGA" },
         { "type": "tablet", "name": "Sony Xperia Z3 Tablet" }
     ],
     "2048x1536": [ 
-        { "type": "standard", "name": "QXGA" },
         { "type": "tablet", "name": "Nexus 9" }
     ],
     "2160x1440": [ 
@@ -128,11 +119,9 @@
         { "type": "laptop", "name": "MacBook 12" }
     ],
     "2560x1440": [ 
-        { "type": "standard", "name": "QHD" },
         { "type": "desktop", "name": "iMac 27" }
     ],
     "2560x1600": [ 
-        { "type": "standard", "name": "WQXGA" },
         { "type": "laptop", "name": "MacBook Pro 13" },
         { "type": "tablet", "name": "Nexus 10" },
         { "type": "tablet", "name": "Sony Xperia Z4 Tablet" },
@@ -154,7 +143,6 @@
         { "type": "laptop", "name": "Surface Book" }
     ],
     "5120x2880": [ 
-        { "type": "standard", "name": "5K" },
         { "type": "desktop", "name": "iMac 5K" }
     ]
 }

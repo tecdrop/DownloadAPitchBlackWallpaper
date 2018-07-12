@@ -1,0 +1,30 @@
+{
+    "1024x600": [
+        { "type": "standard", "name": "WSVGA" }
+    ],
+    "1366x768": [ 
+        { "type": "standard", "name": "FWXGA" }
+    ],
+    "1440x900": [ 
+        { "type": "standard", "name": "WXGA+" },
+        { "type": "standard", "name": "WSXGA" }
+    ],
+    "1920x1080": [ 
+        { "type": "standard", "name": "FHD" }
+    ],
+    "1920x1200": [ 
+        { "type": "standard", "name": "WUXGA" }
+    ],
+    "2048x1536": [ 
+        { "type": "standard", "name": "QXGA" }
+    ],
+    "2560x1440": [ 
+        { "type": "standard", "name": "QHD" }
+    ],
+    "2560x1600": [ 
+        { "type": "standard", "name": "WQXGA" }
+    ],
+    "5120x2880": [ 
+        { "type": "standard", "name": "5K" }
+    ]
+}
