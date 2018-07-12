@@ -11,8 +11,6 @@ const standardList = document.getElementById("standardList");
 
 let commonSizesElems;
 
-const filterCountElem = document.getElementById("filterCount");
-
 const builtinWallpapers = [
     "1080x1920", "1200x1920", "1366x768", "1440x2560", "1440x2960", "1440x900", "1536x2048", "1600x2560",
     "1920x1080", "1920x1200", "2048x1536", "2160x1440", "2304x1440", "2560x1440", "2560x1600", "2560x1700",
@@ -77,13 +75,10 @@ const filterInputEl = document.getElementById("filterInput");
 
 filterInputEl.addEventListener("input", () => {
     const filterExp = RegExp(filterInputEl.value, "i");
-    let counter = 0;
     commonSizesElems.forEach((sizeElem) => {
         const filterResult = filterExp.test(sizeElem.textContent);
         sizeElem.hidden = !filterResult;
-        if (filterResult) counter++;
     });
-    filterCountElem.textContent = counter;
 });
 
 
@@ -94,7 +89,7 @@ function insertScreenResolutions(parentElement, screenResolutions) {
         const itemListHtml = screenResolutions[resolution].reduce((html, item) => `${html}<li data-type="${item.type}">${item.name}</li>`, "");
         
         parentElement.insertAdjacentHTML("beforeend", `
-            <li>
+            <li class="container--fluid">
                 <ul class="device-list">
                     ${itemListHtml}
                 </ul>

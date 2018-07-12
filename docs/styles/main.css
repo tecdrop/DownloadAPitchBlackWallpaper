@@ -34,6 +34,14 @@ p {
     margin: 0 0 1rem 0;
 }
 
+
+h1, h2, h3, h4, h5, h6 {
+    margin-top: 0;
+    margin-bottom: 0.5rem;
+}
+
+
+
 h1 {
     font-size: 1.25rem;
     font-weight: 500;
@@ -41,50 +49,16 @@ h1 {
     margin: 0;
 }
 
-label {
-    background-color: #111;
-    border-radius: 2px 2px 0 0;
-    /* border-radius: 4px 4px 0 0; */
-    /* border: 1px solid #444; */
-    border-bottom: 1px solid #444;
-    color: #777;
-    display: inline-block;
-    margin: 0 0.5rem;
-    padding-left: 1rem;
+ol, ul, dl {
+  margin-top: 0;
+  margin-bottom: 1rem;
 }
 
-label:focus-within {
-    border-bottom: 1px solid #fff;
-}
 
-input[type="text"] {
-    background: inherit;
-    border: 1px solid #222;
-    border-radius: 4px;
-    padding: 0.5rem 1rem;
-    color: #fff;
 
-}
 
-input[type="number"] {
-    /* color: #9E9E9E; */
-    /* background: #000; */
-    background: inherit;
-    border-top-right-radius: 2px;
-    color: white;
-    border: none;
-    padding: 0 0.5rem;
-    /* margin-left: 0.5rem; */
-    height: 48px;
-    width: 5rem;
-    outline: 0;
-    /* margin: 0 1rem; */
-    /* text-align: center; */
-}
 
-/* input[type="number"]:focus {
-    background-color: #000;
-} */
+
 
 [hidden] {
     display: none !important;
@@ -95,7 +69,7 @@ input[type="number"] {
     margin: 0 auto;
 }
 
-header {
+.app-header {
     align-items: center;
     background: #212121;
     color: #fff;
@@ -106,7 +80,7 @@ header {
 }
 
 @media (min-width: 600px) {
-    header {
+    .app-header {
         height: 64px;
     }
 }
@@ -148,43 +122,6 @@ summary:focus {
 
 
 
-button {
-    align-items: center;
-    background-color: #444;
-    border-radius: 2px;
-    border: none;
-    color: #fff;
-    cursor: pointer;
-    display: inline-flex;
-    font-size: .875rem;
-    font-weight: 500;
-    height: 56px;
-    padding: 0 1rem;
-    text-transform: uppercase;
-    user-select: none;
-
-}
-
-@media (hover: hover) {
-    button:hover {
-        background-color: #555;
-    }
-}
-
-button:focus {
-    outline: 0;
-    background-color: #555;
-}
-
-button:active {
-    background-color: #666;
-}
-
-/* .button--download::before {
-    content: url("/images/icons/baseline-get_app-24px.svg");
-    height: 24px;
-    margin-right: 0.5rem;
-} */
 
 .list {
     /* align-content: stretch; */
@@ -263,13 +200,15 @@ button:active {
     pointer-events: none;
 }
 
-.container-fluid {
-    padding: 0 1rem;
+.container--fluid {
+    padding-left: 1rem;
+    padding-right: 1rem;
 }
 
-@media (min-width: 992px) {
-    .container-fluid {
-        padding: 0 2rem;
+@media (min-width: 576px) {
+    .container--fluid {
+        padding-left: 2rem;
+        padding-right: 2rem;
     }    
 }
 
@@ -277,8 +216,8 @@ button:active {
     margin-bottom: 0;
 }
 
-.mb--1-5 {
-    margin-bottom: 1.5rem;
+.mb--1 {
+    margin-bottom: 1rem;
 }
 
 .mb--2 {
@@ -291,6 +230,7 @@ button:active {
 .download-list {
     list-style-type: none;
     padding: 0;
+    
 }
 
 .download-list > li {
@@ -298,14 +238,11 @@ button:active {
     border-bottom: 1px solid #222;
     display: flex;
     justify-content: space-between;
-    padding: 1rem;
+    padding-bottom: 1rem;
+    padding-top: 1rem;
 }
 
-@media (min-width: 576px) {
-    .download-list > li {
-        padding: 1rem 2rem;
-    }
-}
+
 
 .download-list > li > b {
     align-items: center;
@@ -330,6 +267,12 @@ button:active {
     content: url("/images/icons/baseline-tablet-24px.svg");
 }
 
+.download-list__title {
+    border-bottom: 1px solid #222;
+    padding-bottom: 1rem;
+
+}
+
 .download-list .button--download {
     min-width: 10rem;
 }
@@ -337,11 +280,14 @@ button:active {
 .button {
     align-items: center;
     background-color: #444;
-    border-radius: 4px;
+    border-radius: .25rem;
+    border: 1px solid transparent;
+    color: #fff;
     cursor: pointer;
     display: inline-flex;
     padding: 0.5rem 1rem;
     text-decoration: none;
+    user-select: none;
 }
 
 .button--download::before {
@@ -367,13 +313,16 @@ button:active {
 
 
 .device-list {
+    display: flex;
+    flex-wrap: wrap;
     list-style: none;
+    margin-bottom: 0;
     padding: 0;
 }
 
 .device-list > li {
-    display: inline-flex;
-    margin-right: 1rem;
+    display: flex;
+    margin: 0.15rem 1rem 0.15rem 0;
 }
 
 .device-list > li::before {
@@ -404,4 +353,31 @@ button:active {
 
 .device-list > li[data-type="desktop"]::before {
     content: url("/images/icons/baseline-desktop_mac-24px.svg");
+}
+
+
+.form-row {
+    align-items: center;
+    display: flex;
+    justify-content: center;
+}
+
+.form-control {
+    color: #fff;
+    background-color: inherit;
+    border: 1px solid #222;
+    border-radius: .25rem;
+    font-size: 1rem;
+    /* padding: .375rem .75rem; */
+    padding: 0.5rem 1rem;
+    transition: border-color .15s ease-in-out,box-shadow .15s ease-in-out;    
+}
+
+.form-row .form-control {
+    margin: 0 1rem;
+}
+
+
+.content-block {
+    margin-bottom: 4rem;
 }

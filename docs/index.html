@@ -15,39 +15,34 @@
 
 <body>
 
-    <header>
+    <header class="app-header">
         <h1>Download a Pitch Black Wallpaper</h1>
     </header>
 
     <main>
         <section class="hero">
-            <p class="mb--1-5">
-                <label>
-                    Width:
-                    <input type="number" id="widthInput" value="1920" min="1" max="100000">
-                </label>
-                <label>
-                    Height:
-                    <input type="number" id="heightInput" value="1080" min="1" max="100000">
-                </label>
-            </p>
-            <p class="mb--0">
-                <button id="downloadButton" class="button--download">Download Wallpaper</button>
+            <p class="form-row">
+                <input type="number" class="form-control" id="widthInput" value="1920" min="1" max="100000" placeholder="Width">
+                <span>x</span>
+                <input type="number" class="form-control" id="heightInput" value="1080" min="1" max="100000" placeholder="Height">
+                <button id="downloadButton" class="button button--download">Get Wallpaper</button>
                 <a id="downloadLink" hidden href="#">Download Wallpaper</a>
             </p>
         </section>
 
         <section>
-            <h2 class="subtitle">Tinified wallpapers<br><small>for common devices</small></h2>
-            <div class="filter__container">
-                <input id="filterInput" type="text" placeholder="Search / Filter">
-                <span>
-                    <strong id="filterCount"></strong> devices</span>
-            </div>
-            <ul id="deviceList" class="download-list">
+            <!-- <h2 class="subtitle">Ready-made tinified wallpapers<br><small>for common devices</small></h2> -->
+            <header class="content-block">
+                <h2 class="subtitle mb--1">Ready-made tinified wallpapers</h2>
+                <div class="form-row mb--2">
+                    <input type="text" id="filterInput" class="form-control" placeholder="Search / Filter">
+                </div>
+            </header>
+            <h3 class="container--fluid download-list__title">For common devices</h3>
+            <ul id="deviceList" class="download-list content-block">
             </ul>
-            <h2 class="subtitle">Tinified wallpapers<br><small>for common screen resolutions</small></h2>
-            <ul id="standardList" class="download-list">
+            <h3 class="container--fluid download-list__title">For common screen resolutions</h3>
+            <ul id="standardList" class="download-list content-block">
             </ul>
         </section>
     </main>
