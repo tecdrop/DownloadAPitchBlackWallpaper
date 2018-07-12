@@ -1,9 +1,10 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
-    
+
     <title>Download a Pitch Black Wallpaper</title>
 
     <link rel="stylesheet" href="/styles/normalize.css">
@@ -11,13 +12,15 @@
 
     <meta name="theme-color" content="#000000">
 </head>
+
 <body>
 
-        <header>
-            <h1>Download a Pitch Black Wallpaper</h1>
-        </header>
+    <header>
+        <h1>Download a Pitch Black Wallpaper</h1>
+    </header>
 
-                <main>
+    <main>
+        <section class="hero">
             <p class="mb--1-5">
                 <label>
                     Width:
@@ -32,26 +35,29 @@
                 <button id="downloadButton" class="button--download">Download Wallpaper</button>
                 <a id="downloadLink" hidden href="#">Download Wallpaper</a>
             </p>
-        </main>
-        
-        <div class="container-fluid">
+        </section>
 
-            <h2>Common screen resolutions</h2>
+        <section>
+            <h2 class="subtitle">Tinified wallpapers<br><small>for common screen resolutions</small></h2>
             <div class="filter__container">
                 <input id="filterInput" type="text" placeholder="Search / Filter">
-                <span><strong id="filterCount"></strong> devices</span>
+                <span>
+                    <strong id="filterCount"></strong> devices</span>
             </div>
             <ul id="downloadList" class="download-list">
             </ul>
+        </section>
+    </main>
 
-        </div>
+    <footer>
+        <p>Copyright &copy; 2018
+            <a href="https://www.tecdrop.com" target="_blank">Tecdrop</a>
+        </p>
+    </footer>
 
-        <footer>
-            <p>Copyright &copy; 2018 <a href="https://www.tecdrop.com" target="_blank">Tecdrop</a></p>
-        </footer>
-    
 
     <script src="https://cdn.jsdelivr.net/npm/zlibjs@0.3.1/bin/deflate.min.js"></script>
     <script type="module" src="/scripts/main.js"></script>
 </body>
+
 </html>
