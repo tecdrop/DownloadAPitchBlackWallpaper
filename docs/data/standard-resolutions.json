@@ -8,13 +8,32 @@
     "1024x600": [
         { "type": "standard", "name": "WSVGA" }
     ],
-    "1366x768": [ 
+    "1024x768": [
+        { "type": "standard", "name": "XGA" }
+    ],
+    "1280x720": [
+        { "type": "standard", "name": "WXGA-H" }
+    ],
+    "1280x800": [
+        { "type": "standard", "name": "WXGA" }
+    ],
+    "1280x1024": [
+        { "type": "standard", "name": "SXGA" }
+    ],
+    "1366x768": [
         { "type": "standard", "name": "FWXGA" }
     ],
-    "1440x900": [ 
-        { "type": "standard", "name": "WXGA+" },
-        { "type": "standard", "name": "WSXGA" }
+    "1440x900": [
+        { "type": "standard", "name": "WXGA+" }
     ],
+    "1600x900": [
+        { "type": "standard", "name": "HD+" }
+    ],
+    "1680x1050": [
+        { "type": "standard", "name": "WSXGA+" }
+    ],
+
+    
     "1920x1080": [ 
         { "type": "standard", "name": "FHD" }
     ],
