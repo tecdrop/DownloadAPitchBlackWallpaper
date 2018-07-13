@@ -19,11 +19,13 @@
         },
         "rules": {
             "array-element-newline": "off",
+            "capitalized-comments": "off",
             "dot-location": "off",
             "func-style": "off",
             "linebreak-style": ["error", "windows"],
             "max-len": ["error", 120],
             "no-console": "off",
+            "no-magic-numbers": ["error", { "ignore": [0, 1, 2] }],
             "one-var": "off",
             "padded-blocks": "off",
             "space-before-function-paren": "off"

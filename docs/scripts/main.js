@@ -1,70 +1,78 @@
-/* eslint-disable require-jsdoc */
+/*
+ *  Pitch Black Wallpaper Download. Copyright (c) 2018 Tecdrop. MIT License.
+ *  https://www.tecdrop.com
+ */
 
-const wallpaperPathPrefix = "/images/wallpapers/pitchblackwallpaper-";
-const wallpaperPathSuffix = ".png";
+/* global readyMadeWallpapers */
 
-const widthInput = document.getElementById("widthInput");
-const heightInput = document.getElementById("heightInput");
-const downloadLinkEl = document.getElementById("downloadLink");
+/**
+ * Cached DOM elements.
+ */
+const downloadLinkEl = document.getElementById("download-link");
+const filterInputEl = document.getElementById("filter-input");
+const readyMadeElems = document.querySelectorAll(".download-list > li");
 
-const deviceList = document.getElementById("deviceList");
-const standardList = document.getElementById("standardList");
-
-const commonSizesElems = document.querySelectorAll(".download-list > li");
-
-const builtinWallpapers = [
-    "1080x1920", "1200x1920", "1366x768", "1440x2560", "1440x2960", "1440x900", "1536x2048", "1600x2560",
-    "1920x1080", "1920x1200", "2048x1536", "2160x1440", "2304x1440", "2560x1440", "2560x1600", "2560x1700",
-    "272x340", "2732x2048", "2736x1824", "280x280", "2880x1800", "3000x2000", "312x390", "320x290", "320x320",
-    "320x325", "320x330", "320x480", "480x854", "5120x2880", "640x1136", "640x960", "720x1280", "750x1334",
-    "768x1024", "768x1280", "800x1280"
-];
-
-
-function generatePitchBlackWallpaper(width, height) {
+/**
+ * Generates a pitch black wallpaper using HTML Canvas.
+ * @param {Number} width The width of the wallpaper.
+ * @param {Number} height The height of the wallpaper.
+ * @param {callback} callback A callback function with the wallpaper image Blob object as a single argument.
+ * @returns {void}
+ */
+function generatePitchBlackWallpaper(width, height, callback) {
     const canvas = document.createElement("canvas");
     canvas.width = width;
     canvas.height = height;
     const ctx = canvas.getContext("2d");
     ctx.fillStyle = "black";
     ctx.fillRect(0, 0, canvas.width, canvas.height);
-
-    canvas.toBlob((blob) => {
-        downloadLinkEl.href = URL.createObjectURL(blob);
-        console.log(downloadLinkEl.href);
-        downloadLinkEl.click();
-    });
-
-    // return canvas.toDataURL();
+    canvas.toBlob(callback);
 }
 
-function writeAndDownloadWallpaper(event) {
-    event.preventDefault();
+/**
+ * Downloads a ready-made or a custom size generated wallpaper when the user clicks the Get Wallpaper button.
+ * @returns {void}
+ */
+function getWallpaperEvent() {
 
-    const width = widthInput.value;
-    const height = heightInput.value;
-    const widthHeight = `${width}x${height}`;
+    const width = document.getElementById("width-input").value;
+    const height = document.getElementById("height-input").value;
+    const resolution = `${width}x${height}`;
+    downloadLinkEl.download = `pitchblackwallpaper-${resolution}.png`;
 
-    downloadLinkEl.download = `pitchblackwallpaper-${widthHeight}.png`;
-
-    if (builtinWallpapers.includes(widthHeight)) {
-        downloadLinkEl.href = `/images/wallpapers/pitchblackwallpaper-${widthHeight}.png`;
-        console.log(downloadLinkEl.href);
+    if (readyMadeWallpapers.includes(resolution)) {
+        // We already have a ready-made wallpaper with this resolution, so go ahead and download it
+        downloadLinkEl.href = `/images/wallpapers/pitchblackwallpaper-${resolution}.png`;
         downloadLinkEl.click();
     } else {
-        generatePitchBlackWallpaper(width, height);
+        // Generate a wallpaper with the required resolution and download it
+        generatePitchBlackWallpaper(width, height, (blob) => {
+            downloadLinkEl.href = URL.createObjectURL(blob);
+            // downloadLinkEl.dataset.revoke = true;
+            downloadLinkEl.click();
+        });
     }
 }
 
-const downloadButtonEl = document.getElementById("downloadButton");
-downloadButtonEl.addEventListener("click", writeAndDownloadWallpaper);
-
-const filterInputEl = document.getElementById("filterInput");
-
-filterInputEl.addEventListener("input", () => {
+/**
+ * Filters the ready-made wallpapers download list when the user changes the value of the Search/Filter input.
+ * @returns {void}
+ */
+function filterInputEvent() {
     const filterExp = RegExp(filterInputEl.value, "i");
-    commonSizesElems.forEach((sizeElem) => {
+    readyMadeElems.forEach((sizeElem) => {
         const filterResult = filterExp.test(sizeElem.textContent);
         sizeElem.hidden = !filterResult;
     });
-});
+}
+
+/**
+ * Initializes the app by setting up event listeners.
+ * @returns {void}
+ */
+function initApp() {
+    document.getElementById("get-wallpaper-button").addEventListener("click", getWallpaperEvent);
+    filterInputEl.addEventListener("input", filterInputEvent);
+}
+
+initApp();
