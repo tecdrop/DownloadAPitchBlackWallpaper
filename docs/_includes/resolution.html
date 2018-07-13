@@ -1,0 +1,12 @@
+<li class="container--fluid">
+    <ul class="device-list">
+        {% for device in resolution[1] %}
+            <li data-type="{{ device.type }}">{{ device.name }}</li>
+        {% endfor %}
+    </ul>
+    {% if include.swappable %}
+        {% assign swapped_resolution = resolution[0] | split: "x" | reverse | join: "x" %}
+        <a class="button button--swap" href="/images/wallpapers/pitchblackwallpaper-{{ swapped_resolution }}.png" download></a>
+    {% endif %}
+    <a class="button button--download" href="/images/wallpapers/pitchblackwallpaper-{{ resolution[0] }}.png" download>{{ resolution[0] | replace: "x", " x " }}</a>
+</li>

@@ -1,61 +1,36 @@
-<!DOCTYPE html>
-<html lang="en">
+---
+---
 
-<head>
-    <meta charset="utf-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
-
-    <title>Download a Pitch Black Wallpaper</title>
-
-    <link rel="stylesheet" href="/styles/normalize.css">
-    <link rel="stylesheet" href="/styles/main.css">
-
-    <meta name="theme-color" content="#000000">
-</head>
-
-<body>
-
-    <header class="page-header">
-        <h1 class="title">Download a Pitch Black Wallpaper</h1>
-    </header>
-
-    <main>
-        <section class="hero">
-            <h2 class="subtitle mb--1">Custom size wallpaper</h2>
-            <p class="form-row">
-                <input type="number" class="form-control" id="widthInput" value="1920" min="1" max="100000" placeholder="Width">
-                <span>x</span>
-                <input type="number" class="form-control" id="heightInput" value="1080" min="1" max="100000" placeholder="Height">
-                <button id="downloadButton" class="button button--download">Get Wallpaper</button>
-                <a id="downloadLink" hidden href="#">Download Wallpaper</a>
-            </p>
-        </section>
-
-        <section>
-            <header class="content-block">
-                <h2 class="subtitle mb--1">Ready-made tinified wallpapers</h2>
-                <div class="form-row">
-                    <input type="text" id="filterInput" class="form-control" placeholder="Search / Filter">
-                </div>
-            </header>
-            <h3 class="container--fluid download-list__title">For common devices</h3>
-            <ul id="deviceList" class="download-list content-block">
-            </ul>
-            <h3 class="container--fluid download-list__title">For common screen resolutions</h3>
-            <ul id="standardList" class="download-list content-block">
-            </ul>
-        </section>
-    </main>
-
-    <footer class="page-footer">
-        <p>Copyright &copy; 2018
-            <a href="https://www.tecdrop.com" target="_blank">Tecdrop</a>
+<main>
+    <section class="hero">
+        <h2 class="subtitle mb--1">Custom size wallpaper</h2>
+        <p class="form-row">
+            <input type="number" class="form-control" id="widthInput" value="1920" min="1" max="100000" placeholder="Width">
+            <span>x</span>
+            <input type="number" class="form-control" id="heightInput" value="1080" min="1" max="100000" placeholder="Height">
+            <button id="downloadButton" class="button button--download">Get Wallpaper</button>
+            <a id="downloadLink" hidden href="#">Download Wallpaper</a>
         </p>
-    </footer>
+    </section>
 
-
-    <script src="https://cdn.jsdelivr.net/npm/zlibjs@0.3.1/bin/deflate.min.js"></script>
-    <script type="module" src="/scripts/main.js"></script>
-</body>
-
-</html>
+    <section>
+        <header class="content-block">
+            <h2 class="subtitle mb--1">Ready-made tinified wallpapers</h2>
+            <div class="form-row">
+                <input type="text" id="filterInput" class="form-control" placeholder="Search / Filter">
+            </div>
+        </header>
+        <h3 class="container--fluid download-list__title">For common devices</h3>
+        <ul id="deviceList" class="download-list content-block">
+            {% for resolution in site.data.device-resolutions %}
+                {% include resolution.html %}
+            {% endfor %}
+        </ul>
+        <h3 class="container--fluid download-list__title">For common screen resolutions</h3>
+        <ul id="standardList" class="download-list content-block">
+            {% for resolution in site.data.standard-resolutions %}
+                {% include resolution.html swappable=true %}
+            {% endfor %}
+        </ul>
+    </section>
+</main>

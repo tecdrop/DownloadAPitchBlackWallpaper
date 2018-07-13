@@ -10,7 +10,7 @@ const downloadLinkEl = document.getElementById("downloadLink");
 const deviceList = document.getElementById("deviceList");
 const standardList = document.getElementById("standardList");
 
-let commonSizesElems;
+const commonSizesElems = document.querySelectorAll(".download-list > li");
 
 const builtinWallpapers = [
     "1080x1920", "1200x1920", "1366x768", "1440x2560", "1440x2960", "1440x900", "1536x2048", "1600x2560",
@@ -68,38 +68,3 @@ filterInputEl.addEventListener("input", () => {
         sizeElem.hidden = !filterResult;
     });
 });
-
-function insertScreenResolutions(parentElement, screenResolutions, addSwap) {
-    Object.keys(screenResolutions).forEach((resolution) => {
-
-        const itemListHtml = screenResolutions[resolution].reduce((html, item) => `${html}<li data-type="${item.type}">${item.name}</li>`, "");
-        let swapButtonHtml = "";
-
-        if (addSwap) {
-            const swappedResolution = resolution.split("x").reverse().join("x");
-            swapButtonHtml = `<a class="button button--swap" href="${wallpaperPathPrefix}${swappedResolution}${wallpaperPathSuffix}" download></a>`;
-        }
-
-        parentElement.insertAdjacentHTML("beforeend", `
-            <li class="container--fluid">
-                <ul class="device-list">
-                    ${itemListHtml}
-                </ul>
-                ${swapButtonHtml}
-                <a class="button button--download" href="${wallpaperPathPrefix}${resolution}${wallpaperPathSuffix}" download>${resolution.replace("x", " x ")}</a>
-            </li>`
-        );
-
-    });
-    commonSizesElems = document.querySelectorAll(".download-list > li");
-
-}
-
-
-fetch("/data/device-resolutions.json")
-    .then((response) => response.json())
-    .then((data) => insertScreenResolutions(deviceList, data));
-
-fetch("/data/standard-resolutions.json")
-    .then((response) => response.json())
-    .then((data) => insertScreenResolutions(standardList, data, true));

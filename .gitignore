@@ -1,6 +1,12 @@
 
 # Created by https://www.gitignore.io/api/node,visualstudiocode
 
+### Jekyll ###
+_site/
+.sass-cache/
+.jekyll-cache/
+.jekyll-metadata
+
 ### Node ###
 # Logs
 logs
