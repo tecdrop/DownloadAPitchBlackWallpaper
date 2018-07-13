@@ -1,6 +1,6 @@
 window.readyMadeWallpapers = [
 {% for wallpaper in site.static_files %}
-    {%- if wallpaper.path contains "/images/wallpapers" -%}
+    {%- if wallpaper.path contains "/wallpapers" -%}
         "{{ wallpaper.basename | split: "-" | last }}",
     {%- endif -%}
 {% endfor %}

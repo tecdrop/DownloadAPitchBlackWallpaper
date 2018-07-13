@@ -6,7 +6,7 @@
     </ul>
     {% if include.swappable %}
         {% assign swapped_resolution = resolution[0] | split: "x" | reverse | join: "x" %}
-        <a class="button button--swap" href="/images/wallpapers/pitchblackwallpaper-{{ swapped_resolution }}.png" download></a>
+        <a class="button button--swap" href="/wallpapers/pitchblackwallpaper-{{ swapped_resolution }}.png" download></a>
     {% endif %}
-    <a class="button button--download" href="/images/wallpapers/pitchblackwallpaper-{{ resolution[0] }}.png" download>{{ resolution[0] | replace: "x", " x " }}</a>
+    <a class="button button--download" href="/wallpapers/pitchblackwallpaper-{{ resolution[0] }}.png" download>{{ resolution[0] | replace: "x", " x " }}</a>
 </li>

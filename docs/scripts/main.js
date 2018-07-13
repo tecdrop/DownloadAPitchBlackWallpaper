@@ -42,7 +42,7 @@ function getWallpaperEvent() {
 
     if (readyMadeWallpapers.includes(resolution)) {
         // We already have a ready-made wallpaper with this resolution, so go ahead and download it
-        downloadLinkEl.href = `/images/wallpapers/pitchblackwallpaper-${resolution}.png`;
+        downloadLinkEl.href = `/wallpapers/pitchblackwallpaper-${resolution}.png`;
         downloadLinkEl.click();
     } else {
         // Generate a wallpaper with the required resolution and download it
