@@ -10,7 +10,7 @@
  */
 const downloadLinkEl = document.getElementById("download-link");
 const filterInputEl = document.getElementById("filter-input");
-const readyMadeElems = document.querySelectorAll(".download-list > li");
+const readyMadeElems = document.querySelectorAll("#device-list .list-group__item, #standards-list .list-group__item");
 
 /**
  * Generates a pitch black wallpaper using HTML Canvas.

@@ -1,32 +1,32 @@
 ---
 layout: default
+title: Download a Pitch Black Wallpaper
 ---
 
-<main>
-    <section class="container--fluid eod">
-        <!-- <h2 class="subtitle">Custom Wallpaper</h2> -->
+<main class="container">
+    <section class="eod">
         <p class="form-row">
-            <input type="number" class="form-control" id="width-input" value="1920" min="1" max="100000" maxlength="5" placeholder="Width">
+            <input type="number" class="form-control" id="width-input" value="1920" min="1" max="100000" maxlength="5" placeholder="Width" aria-label="Width">
             <span>x</span>
-            <input type="number" class="form-control" id="height-input" value="1080" min="1" max="100000" maxlength="5" placeholder="Height">
+            <input type="number" class="form-control" id="height-input" value="1080" min="1" max="100000" maxlength="5" placeholder="Height" aria-label="Height">
             <button id="get-wallpaper-button" class="button button--download">Get Wallpaper</button>
             <a id="download-link" hidden href="#">Download Wallpaper</a>
         </p>
     </section>
 
     <section>
-        <header class="container--fluid section-header eod">
+        <header class="section-header eod">
             <h2 class="subtitle mb--0">Builtin Wallpapers</h2>
-            <input type="text" id="filter-input" class="form-control input--filter" placeholder="Search / Filter">
+            <input type="text" id="filter-input" class="form-control input--filter" placeholder="Search / Filter" aria-label="Search / Filter">
         </header>
-        <h3 class="container--fluid download-list__title">For common devices</h3>
-        <ul class="download-list eod">
+        <h3>For common devices</h3>
+        <ul id="device-list" class="list-group eod">
             {% for resolution in site.data.device-resolutions %}
                 {% include resolution.html %}
             {% endfor %}
         </ul>
-        <h3 class="container--fluid download-list__title">For common screen resolutions</h3>
-        <ul class="download-list eod">
+        <h3>For common screen resolutions</h3>
+        <ul id="standards-list" class="list-group eod">
             {% for resolution in site.data.standard-resolutions %}
                 {% include resolution.html swappable=true %}
             {% endfor %}

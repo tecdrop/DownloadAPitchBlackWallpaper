@@ -1,12 +1,12 @@
-<li class="container--fluid">
-    <ul class="device-list">
+<li class="list-group__item">
+    <ul class="list-inline">
         {% for device in resolution[1] %}
-            <li data-type="{{ device.type }}">{{ device.name }}</li>
+            <li class="list-inline__item list-inline__item--icon" data-icon="{{ device.type }}">{{ device.name }}</li>
         {% endfor %}
     </ul>
     {% if include.swappable %}
         {% assign swapped_resolution = resolution[0] | split: "x" | reverse | join: "x" %}
-        <a class="button button--icon button--icon-swap" href="/wallpapers/pitchblackwallpaper-{{ swapped_resolution }}.png" download></a>
+        <a class="button button--icon" data-icon="swap" href="/wallpapers/pitchblackwallpaper-{{ swapped_resolution }}.png" download aria-label="{{ swapped_resolution }}"></a>
     {% endif %}
     <a class="button button--download" href="/wallpapers/pitchblackwallpaper-{{ resolution[0] }}.png" download>{{ resolution[0] | replace: "x", "<small>x</small>" }}</a>
 </li>

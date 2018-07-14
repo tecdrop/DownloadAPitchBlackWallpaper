@@ -29,7 +29,7 @@ body {
 
 h1, h2, h3, h4, h5, h6 {
     margin-top: 0;
-    margin-bottom: 0.5rem;
+    margin-bottom: 1rem;
 }
 
 p {
@@ -87,15 +87,6 @@ input, button {
 }
 
 /*
- * Page Hero
- */
-
-.hero {
-    /* padding: 20vmin 0;
-    text-align: center; */
-}
-
-/*
  * Page Footer
  */
 
@@ -109,43 +100,40 @@ input, button {
    Common Layout
    ========================================================================== */
 
-.container--fluid {
+.container {
+    width: 100%;
+    padding-left: 1rem;
+    padding-right: 1rem;
+    /* padding-left: 0.5rem;
+    padding-right: 0.5rem; */
     margin-right: auto;
     margin-left: auto;
-    padding-left: 0.75rem;
-    padding-right: 0.75rem;
 }
-
+  
 @media (min-width: 576px) {
-    .container--fluid {
-        padding-left: 1rem;
-        padding-right: 1rem;
-    }    
+    .container {
+        max-width: 540px;
+    }
 }
-
+  
 @media (min-width: 768px) {
-    .container--fluid {
-        padding-left: 1.5rem;
-        padding-right: 1.5rem;
-    }    
+    .container {
+        max-width: 720px;
+    }
 }
-
+  
 @media (min-width: 992px) {
-    .container--fluid {
-        padding-left: 2rem;
-        padding-right: 2rem;
+    .container {
         max-width: 960px;
-    }    
+    }
 }
-
+  
 @media (min-width: 1200px) {
-    .container--fluid {
+    .container {
         max-width: 1140px;
-        /* padding-left: 6rem;
-        padding-right: 6rem; */
-    }    
+    }
 }
-
+  
 .eod {
     margin-bottom: 4rem;
 }
@@ -169,11 +157,8 @@ input, button {
 }
 
 .subtitle {
-    /* color: #ebebeb; */
     color: #ccc;
-    
     font-weight: 700;
-    /* font-weight: 500; */
     margin-bottom: 1rem;
     text-align: center;
 }
@@ -199,6 +184,19 @@ input, button {
     border-top: 1px solid #222;     */
 }
 
+@media (min-width: 992px) {
+    .section-header {
+        padding-right: 1rem;
+    }
+}
+
+@media (min-width: 1200px) {
+    .section-header {
+        padding-right: 2rem;
+    }
+}
+
+
 /* ==========================================================================
    Components
    ========================================================================== */
@@ -221,6 +219,21 @@ input, button {
     white-space: nowrap;
 }
 
+@media (hover: hover) {
+    .button:hover {
+        background-color: #555;
+    }
+}
+
+.button:focus {
+    outline: 0;
+    background-color: #555;
+}
+
+.button:active {
+    background-color: #666;
+}
+
 .button--download::before {
     content: url("/images/icons/baseline-get_app-24px.svg");
     height: 24px;
@@ -231,39 +244,191 @@ input, button {
     font-size: inherit;
 }
 
-/* @media (min-width: 576px) {
-    .button--download small {
-        margin: 0 0.25rem;
-    }
-} */
+/*
+ * Icon buttons
+ */
 
-.download-list .button--download {
+.button--icon {
+    background-color: inherit;
+    background-position: center;
+    background-repeat: no-repeat;
+    height: 3rem;
+    padding: 0;
+    width: 3rem;
+}
+
+.button--icon[data-icon="android"] {
+    background-image: url("/images/icons/baseline-android-24px.svg");
+}
+
+.button--icon[data-icon="info"] {
+    background-image: url("/images/icons/baseline-info-24px.svg");
+}
+
+.button--icon[data-icon="swap"] {
+    background-image: url("/images/icons/baseline-swap_horizontal_circle-24px.svg");
+}
+
+/*
+ * List group buttons
+ */
+
+.list-group .button--download {
     padding: 0.5rem 0;
-    min-width: 7rem;
-    font-size: .875rem;
+    min-width: 8rem;
+    /* font-size: .875rem; */
     justify-content: space-evenly;
 }
 
 @media (min-width: 576px) {
-    .download-list .button--download {
-        font-size: 1rem;
+    .list-group .button--download {
+        /* font-size: 1rem; */
         min-width: 10rem;
     }
 }
 
-.download-list .button--download::before {
+.list-group .button--download::before {
     margin-right: 0;
 }
 
-.download-list .button--icon {
+.list-group .button--icon {
     margin: 0 0.5rem;
 }
+
+/*
+ * List group
+ */
+
+ .list-group {
+    list-style-type: none;
+    padding: 0;
+}
+
+.list-group__item {
+    align-items: center;
+    border-bottom: 1px solid #222;
+    display: flex;
+    margin-left: -0.5rem;
+    margin-right: -0.5rem;
+    padding-bottom: 1rem;
+    padding-top: 1rem;
+}
+
+@media (min-width: 400px) {
+    .list-group__item {
+        margin-left: 0;
+        margin-right: 0;
+    }
+}
+
+@media (min-width: 992px) {
+    .list-group__item {
+        border-left: 1px solid #222;
+        border-right: 1px solid #222;
+        padding-left: 1rem;
+        padding-right: 1rem;
+    }
+}
+
+@media (min-width: 1200px) {
+    .list-group__item {
+        padding-left: 2rem;
+        padding-right: 2rem;
+    }
+}
+
+.list-group__item:first-child {
+    border-top: 1px solid #222;
+}
+
+@media (min-width: 992px) {
+    .list-group__item:first-child {
+        border-top-left-radius: 4px;
+        border-top-right-radius: 4px;
+    }
+}
+
+@media (min-width: 992px) {
+    .list-group__item:last-child {
+        border-bottom-left-radius: 4px;
+        border-bottom-right-radius: 4px;
+    }    
+}
+
+/*
+ * Inline lists
+ */
+
+.list-inline {
+    flex-grow: 1;
+    list-style: none;
+    margin-bottom: 0;
+    padding: 0;
+}
+
+@media (min-width: 576px) {
+    .list-inline {
+        display: flex;
+        flex-wrap: wrap;
+    }
+}
+
+.list-inline__item {
+    display: flex;
+    margin: 0.15rem 0.5rem 0.15rem 0;
+}
+
+@media (min-width: 576px) {
+    .list-inline__item {
+        margin-right: 1rem;
+    }
+}
+
+.list-inline__item--icon::before {
+    height: 24px;
+    margin-right: 0.25rem;
+    opacity: 0.5;
+}
+
+@media (min-width: 576px) {
+    .list-inline__item--icon::before {
+        margin-right: 0.5rem;
+    }
+}
+
+/*
+ * Inline list item icons
+ */
+
+.list-inline__item--icon[data-icon="watch"]::before {
+    content: url("/images/icons/baseline-watch-24px.svg");
+}
+
+.list-inline__item--icon[data-icon="handset"]::before {
+    content: url("/images/icons/baseline-smartphone-24px.svg");
+}
+
+.list-inline__item--icon[data-icon="tablet"]::before {
+    content: url("/images/icons/baseline-tablet-24px.svg");
+}
+
+.list-inline__item--icon[data-icon="laptop"]::before {
+    content: url("/images/icons/baseline-laptop-24px.svg");
+}
+
+.list-inline__item--icon[data-icon="desktop"]::before {
+    content: url("/images/icons/baseline-desktop_mac-24px.svg");
+}
+
+/* list-inline__item--icon[data-icon="standard"]::before {
+    content: url("/images/icons/baseline-aspect_ratio-24px.svg"); 
+}*/
 
 /*
  * Forms
  */
 
-.form-row {
+ .form-row {
     align-items: center;
     display: flex;
     flex-wrap: wrap;
@@ -294,119 +459,6 @@ input, button {
 }
 
 
-
-/* ==========================================================================
-   Specialized Components
-   ========================================================================== */
-
-/*
- * Download list
- */
-
-.download-list {
-    list-style-type: none;
-    padding: 0;
-}
-
-.download-list > li {
-    align-items: center;
-    border-bottom: 1px solid #222;
-    display: flex;
-    padding-bottom: 1rem;
-    padding-top: 1rem;
-}
-
-@media (min-width: 992px) {
-    .download-list > li {
-        border-left: 1px solid #222;
-        border-right: 1px solid #222;
-    }
-}
-
-.download-list > li:first-child {
-    border-top: 1px solid #222;
-}
-
-@media (min-width: 992px) {
-    .download-list > li:first-child {
-        border-top-left-radius: 4px;
-        border-top-right-radius: 4px;
-    }
-}
-
-@media (min-width: 992px) {
-    .download-list > li:last-child {
-        border-bottom-left-radius: 4px;
-        border-bottom-right-radius: 4px;
-    }    
-}
-
-
-.download-list__title {
-    /* border-bottom: 1px solid #222;
-    padding-bottom: 1rem; */
-    margin-bottom: 1rem;
-}
-
-/*
- * Device list
- */
-
-.device-list {
-    flex-grow: 1;
-    list-style: none;
-    margin-bottom: 0;
-    padding: 0;
-}
-
-@media (min-width: 576px) {
-    .device-list {
-        display: flex;
-        flex-wrap: wrap;
-    }
-}
-
-.device-list > li {
-    display: flex;
-    margin: 0.15rem 0.75rem 0.15rem 0;
-}
-
-.device-list > li::before {
-    height: 24px;
-    margin-right: 0.25rem;
-    opacity: 0.5;
-}
-
-@media (min-width: 576px) {
-    .device-list > li::before {
-        margin-right: 0.5rem;
-    }
-}
-
-.device-list > li[data-type="watch"]::before {
-    content: url("/images/icons/baseline-watch-24px.svg");
-}
-
-.device-list > li[data-type="handset"]::before {
-    content: url("/images/icons/baseline-smartphone-24px.svg");
-}
-
-.device-list > li[data-type="tablet"]::before {
-    content: url("/images/icons/baseline-tablet-24px.svg");
-}
-
-.device-list > li[data-type="laptop"]::before {
-    content: url("/images/icons/baseline-laptop-24px.svg");
-}
-
-.device-list > li[data-type="desktop"]::before {
-    content: url("/images/icons/baseline-desktop_mac-24px.svg");
-}
-
-/* .device-list > li[data-type="standard"]::before {
-    content: url("/images/icons/baseline-aspect_ratio-24px.svg"); 
-}*/
-
 /* ==========================================================================
    Utilities
    ========================================================================== */
@@ -423,32 +475,8 @@ input, button {
     margin-bottom: 2rem !important;
 }
 
-
 @media (min-width: 576px) {
     .d-sm-none {
         display: none !important;
     }
-}
-
-
-.button--icon {
-    background-color: inherit;
-    background-repeat: no-repeat;
-    background-position: center;
-    padding: 0;
-    height: 3rem;
-    width: 3rem;
-    /* margin-right: 1rem; */
-}
-
-.button--icon-android {
-    background-image: url("/images/icons/baseline-android-24px.svg");
-}
-
-.button--icon-info {
-    background-image: url("/images/icons/baseline-info-24px.svg");
-}
-
-.button--icon-swap {
-    background-image: url("/images/icons/baseline-swap_horizontal_circle-24px.svg");
 }

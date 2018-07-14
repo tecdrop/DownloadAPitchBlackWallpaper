@@ -2,12 +2,12 @@
 layout: default
 ---
 
-<h2 class="container--fluid download-list__title">All ready-made tinified wallpapers</h2>
+<h2 class="download-list__title">All ready-made tinified wallpapers</h2>
 <ul class="download-list content-block">
     {% for wallpaper in site.static_files %}
         {%- if wallpaper.path contains "/wallpapers" -%}
-            <li class="container--fluid">
-                <ul class="device-list">
+            <li>
+                <ul class="list-inline">
                     <li>{{ wallpaper.name }}</li>
                 </ul>
                 <a class="button button--download" href="{{ wallpaper.path }}" download>{{ wallpaper.basename | split: "-" | last | replace: "x", " x " }}</a>
