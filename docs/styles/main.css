@@ -75,9 +75,10 @@ input, button {
     padding: 0 1rem;
 }
 
-@media (min-width: 600px) {
+@media (min-width: 768px) {
     .page-header {
         height: 64px;
+        padding: 0 1.5rem;
     }
 }
 
@@ -109,28 +110,39 @@ input, button {
    ========================================================================== */
 
 .container--fluid {
+    margin-right: auto;
+    margin-left: auto;
     padding-left: 0.75rem;
     padding-right: 0.75rem;
 }
 
 @media (min-width: 576px) {
     .container--fluid {
-        padding-left: 2rem;
-        padding-right: 2rem;
+        padding-left: 1rem;
+        padding-right: 1rem;
+    }    
+}
+
+@media (min-width: 768px) {
+    .container--fluid {
+        padding-left: 1.5rem;
+        padding-right: 1.5rem;
     }    
 }
 
 @media (min-width: 992px) {
     .container--fluid {
-        padding-left: 4rem;
-        padding-right: 4rem;
+        padding-left: 2rem;
+        padding-right: 2rem;
+        max-width: 960px;
     }    
 }
 
 @media (min-width: 1200px) {
     .container--fluid {
-        padding-left: 6rem;
-        padding-right: 6rem;
+        max-width: 1140px;
+        /* padding-left: 6rem;
+        padding-right: 6rem; */
     }    
 }
 
@@ -174,12 +186,17 @@ input, button {
 
 .section-header {
     align-items: center;
-    background: #111;
+    /* background: #111; */
+    /* border: 1px solid #222; */
+    /* border-radius: 4px; */
     display: flex;
     flex-wrap: wrap;
     justify-content: space-between;
     padding-bottom: 1rem;
     padding-top: 1rem;
+    margin-bottom: 2rem;
+    /* border-bottom: 1px solid #222;
+    border-top: 1px solid #222;     */
 }
 
 /* ==========================================================================
@@ -207,16 +224,40 @@ input, button {
 .button--download::before {
     content: url("/images/icons/baseline-get_app-24px.svg");
     height: 24px;
-    margin-right: 0.1rem;
+    margin-right: 0.5rem;
+}
+
+.button--download small {
+    font-size: inherit;
+}
+
+/* @media (min-width: 576px) {
+    .button--download small {
+        margin: 0 0.25rem;
+    }
+} */
+
+.download-list .button--download {
+    padding: 0.5rem 0;
+    min-width: 7rem;
+    font-size: .875rem;
+    justify-content: space-evenly;
 }
 
 @media (min-width: 576px) {
-    .button--download::before {
-        margin-right: 0.5rem;
+    .download-list .button--download {
+        font-size: 1rem;
+        min-width: 10rem;
     }
 }
 
+.download-list .button--download::before {
+    margin-right: 0;
+}
 
+.download-list .button--icon {
+    margin: 0 0.5rem;
+}
 
 /*
  * Forms
@@ -238,13 +279,20 @@ input, button {
     padding: 0.5rem 1rem;
 }
 
-.form-row .form-control {
-    margin: 1rem;
+.form-row .form-control, .form-row .button {
+    margin: 0.5rem;
 }
 
 .input--filter {
-    width: 10rem;
+    width: 7rem;
 }
+
+@media (min-width: 576px) {
+    .input--filter {
+        width: 10rem;
+    }
+}
+
 
 
 /* ==========================================================================
@@ -264,45 +312,63 @@ input, button {
     align-items: center;
     border-bottom: 1px solid #222;
     display: flex;
-    /* justify-content: space-between; */
     padding-bottom: 1rem;
     padding-top: 1rem;
 }
 
-.download-list__title {
-    border-bottom: 1px solid #222;
-    padding-bottom: 1rem;
-
-}
-
-.download-list .button--download {
-    padding: 0.5rem 0.25rem;
-    min-width: 8rem;
-}
-
-@media (min-width: 576px) {
-    .download-list .button--download {
-        padding: 0.5rem 1rem;
-        min-width: 10rem;
+@media (min-width: 992px) {
+    .download-list > li {
+        border-left: 1px solid #222;
+        border-right: 1px solid #222;
     }
+}
+
+.download-list > li:first-child {
+    border-top: 1px solid #222;
+}
+
+@media (min-width: 992px) {
+    .download-list > li:first-child {
+        border-top-left-radius: 4px;
+        border-top-right-radius: 4px;
+    }
+}
+
+@media (min-width: 992px) {
+    .download-list > li:last-child {
+        border-bottom-left-radius: 4px;
+        border-bottom-right-radius: 4px;
+    }    
+}
+
+
+.download-list__title {
+    /* border-bottom: 1px solid #222;
+    padding-bottom: 1rem; */
+    margin-bottom: 1rem;
 }
 
 /*
  * Device list
  */
 
- .device-list {
-    display: flex;
+.device-list {
     flex-grow: 1;
-    flex-wrap: wrap;
     list-style: none;
     margin-bottom: 0;
     padding: 0;
 }
 
+@media (min-width: 576px) {
+    .device-list {
+        display: flex;
+        flex-wrap: wrap;
+    }
+}
+
 .device-list > li {
     display: flex;
-    margin: 0.15rem 1rem 0.15rem 0;
+    margin: 0.15rem 0.75rem 0.15rem 0;
 }
 
 .device-list > li::before {
