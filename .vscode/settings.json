@@ -1,5 +1,5 @@
 {
-    "liveServer.settings.root": "/docs",
+    "liveServer.settings.root": "/docs/_site",
     "cSpell.words": [
         "Elems",
         "Tecdrop"

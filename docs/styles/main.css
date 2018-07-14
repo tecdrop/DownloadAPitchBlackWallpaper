@@ -71,8 +71,8 @@ input, button {
     color: #fff;
     display: flex;
     height: 56px;
+    justify-content: space-between;
     padding: 0 1rem;
-    text-align: center;
 }
 
 @media (min-width: 600px) {
@@ -81,13 +81,17 @@ input, button {
     }
 }
 
+.page-header__nav {
+    display: flex;
+}
+
 /*
  * Page Hero
  */
 
 .hero {
-    padding: 20vmin 0;
-    text-align: center;
+    /* padding: 20vmin 0;
+    text-align: center; */
 }
 
 /*
@@ -105,8 +109,8 @@ input, button {
    ========================================================================== */
 
 .container--fluid {
-    padding-left: 1rem;
-    padding-right: 1rem;
+    padding-left: 0.75rem;
+    padding-right: 0.75rem;
 }
 
 @media (min-width: 576px) {
@@ -130,7 +134,7 @@ input, button {
     }    
 }
 
-.content-block {
+.eod {
     margin-bottom: 4rem;
 }
 
@@ -140,18 +144,43 @@ input, button {
    ========================================================================== */
 
 .title {
-    font-size: 1.25rem;
+    font-size: 1rem;
     font-weight: 500;
-    line-height: 2rem;
+    line-height: 1.25;
     margin: 0;
 }
 
+@media (min-width: 576px) {
+    .title {
+        font-size: 1.25rem;
+    }
+}
+
 .subtitle {
-    font-weight: 500;
-    margin-bottom: 4rem;    
+    /* color: #ebebeb; */
+    color: #ccc;
+    
+    font-weight: 700;
+    /* font-weight: 500; */
+    margin-bottom: 1rem;
     text-align: center;
 }
 
+@media (min-width: 576px) {
+    .subtitle {
+        font-size: 1.75rem;
+    }
+}
+
+.section-header {
+    align-items: center;
+    background: #111;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+    padding-bottom: 1rem;
+    padding-top: 1rem;
+}
 
 /* ==========================================================================
    Components
@@ -172,13 +201,22 @@ input, button {
     padding: 0.5rem 1rem;
     text-decoration: none;
     user-select: none;
+    white-space: nowrap;
 }
 
 .button--download::before {
     content: url("/images/icons/baseline-get_app-24px.svg");
     height: 24px;
-    margin-right: 0.5rem;
+    margin-right: 0.1rem;
 }
+
+@media (min-width: 576px) {
+    .button--download::before {
+        margin-right: 0.5rem;
+    }
+}
+
+
 
 /*
  * Forms
@@ -187,6 +225,7 @@ input, button {
 .form-row {
     align-items: center;
     display: flex;
+    flex-wrap: wrap;
     justify-content: center;
 }
 
@@ -200,7 +239,11 @@ input, button {
 }
 
 .form-row .form-control {
-    margin: 0 1rem;
+    margin: 1rem;
+}
+
+.input--filter {
+    width: 10rem;
 }
 
 
@@ -233,7 +276,15 @@ input, button {
 }
 
 .download-list .button--download {
-    min-width: 10rem;
+    padding: 0.5rem 0.25rem;
+    min-width: 8rem;
+}
+
+@media (min-width: 576px) {
+    .download-list .button--download {
+        padding: 0.5rem 1rem;
+        min-width: 10rem;
+    }
 }
 
 /*
@@ -256,8 +307,14 @@ input, button {
 
 .device-list > li::before {
     height: 24px;
-    margin-right: 0.5rem;
+    margin-right: 0.25rem;
     opacity: 0.5;
+}
+
+@media (min-width: 576px) {
+    .device-list > li::before {
+        margin-right: 0.5rem;
+    }
 }
 
 .device-list > li[data-type="watch"]::before {
@@ -288,19 +345,44 @@ input, button {
    Utilities
    ========================================================================== */
 
+.mb--0 {
+    margin-bottom: 0 !important;
+}
+
 .mb--1 {
     margin-bottom: 1rem !important;
 }
 
+.mb--2 {
+    margin-bottom: 2rem !important;
+}
 
 
-.button--swap {
+@media (min-width: 576px) {
+    .d-sm-none {
+        display: none !important;
+    }
+}
+
+
+.button--icon {
     background-color: inherit;
-    background-image: url("/images/icons/baseline-swap_horizontal_circle-24px.svg");
     background-repeat: no-repeat;
     background-position: center;
     padding: 0;
-    height: 2rem;
-    width: 2rem;
-    margin-right: 1rem;
+    height: 3rem;
+    width: 3rem;
+    /* margin-right: 1rem; */
+}
+
+.button--icon-android {
+    background-image: url("/images/icons/baseline-android-24px.svg");
+}
+
+.button--icon-info {
+    background-image: url("/images/icons/baseline-info-24px.svg");
+}
+
+.button--icon-swap {
+    background-image: url("/images/icons/baseline-swap_horizontal_circle-24px.svg");
 }
