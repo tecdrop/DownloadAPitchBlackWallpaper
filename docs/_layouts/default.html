@@ -9,10 +9,14 @@
     <meta name="description" content="{{ page.description }}">
 
     
-    <link rel="stylesheet" href="/styles/normalize.css">
-    <link rel="stylesheet" href="/styles/main.css">
+    <link rel="stylesheet" href="{{ site.url }}/styles/normalize.css">
+    <link rel="stylesheet" href="{{ site.url }}/styles/main.css">
 
     <meta name="theme-color" content="#000000">
+
+    {%- if jekyll.environment == "production" -%}
+        {%- include google-analytics.html -%}
+    {%- endif -%}
 </head>
 
 <body>
@@ -33,7 +37,7 @@
         </p>
     </footer>
 
-    <script type="module" src="/scripts/main.js"></script>
+    <script type="module" src="{{ site.url }}/scripts/main.js"></script>
 </body>
 
 </html>
